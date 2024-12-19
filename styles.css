@@ -37,6 +37,7 @@ body {
     color: white;
   }
   main {
+    /* entête de la page */
     #en_tete {
       background-image: linear-gradient(rgb(186, 14, 14), rgb(0, 0, 0));
       div {
@@ -52,10 +53,12 @@ body {
         }
       }
     }
+    /* fin de l'entête de la page */
+    /* débus des logo qui tourne de gauche à droite */
     #logos {
       overflow: hidden;
       padding: 2em 0;
-      background-color: rgba(0, 0, 0, 0.526);
+      margin: 2em 0;
       white-space: nowrap;
       position: relative;
       &::before {
@@ -91,8 +94,6 @@ body {
           height: 5em;
           margin: 0 40px;
           &:hover {
-            /* animation-play-state: paused; */
-
             transform: translateY(-6px);
             transition-duration: 0.5s;
             animation-name: hover;
@@ -106,16 +107,21 @@ body {
         }
       }
     }
+
+    /* fin des logo qui tourne de gauche à droite */
+
     #profil_comp {
+      /* début de la div de la section profil et des compétences */
       display: flex;
       justify-content: space-around;
-      margin-top: 8em;
       background-image: linear-gradient(136deg, #ff0000, #000000db);
 
       padding: 2em 0;
 
       section {
+        /* début de la section du profil et des compétences  */
         &:first-of-type {
+          /* début de la section profil */
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -151,6 +157,10 @@ body {
               img {
                 padding: 1em;
                 height: 5em;
+                &:hover {
+                  transform: scale(1.1);
+                  transition: 1s;
+                }
               }
             }
           }
@@ -162,12 +172,19 @@ body {
             margin-top: 0;
           }
         }
+        /* fin de la section profil */
         &:last-of-type {
+          /*début de la section des compétences*/
           display: flex;
           flex-direction: column;
           align-items: center;
           width: 25%;
-          border: outset;
+          border: 2px solid black;
+          background: linear-gradient(
+            310deg,
+            rgba(0, 0, 0, 0.85) 9%,
+            rgba(255, 0, 0, 0.85) 100%
+          );
           h2 {
             border-bottom: 1px solid white;
             width: 60%;
@@ -189,7 +206,9 @@ body {
             }
           }
         }
-      }
-    }
+        /* fin de la section des compétence*/
+      } /* fin de la section du profil et des compétences */
+    } /*fin de la div de la section profil et compétences*/
+    /* début de la section téléchargement */
   }
 }
