@@ -38,18 +38,43 @@ body {
   }
   main {
     /* entête de la page */
-    #en_tete {
-      background-image: linear-gradient(rgb(186, 14, 14), rgb(0, 0, 0));
-      div {
+    #title {
+      background-image: linear-gradient(
+          rgb(186, 14, 14, 0.4),
+          rgb(0, 0, 0, 0.8)
+        ),
+        url(img_entete/logistique.jpg);
+
+      background-repeat: no-repeat;
+      background-position: left;
+      width: 100%;
+      background-size: 51% 100%;
+      div:not(#sous_title) {
         color: white;
         text-align: center;
         padding: 10em 0;
+        background-image: linear-gradient(
+            rgb(186, 14, 14, 0.4),
+            rgb(0, 0, 0, 0.8)
+          ),
+          url(img_entete/web-development.jpg);
+        background-repeat: no-repeat;
+        background-position: right;
+        width: 100%;
+        background-size: 50% 100%;
+        #sous_title {
+          display: flex;
+          justify-content: space-evenly;
+        }
         h1 {
           font-size: 3em;
           letter-spacing: 3px;
         }
         p {
           font-size: 1.2em;
+          &:first-of-type {
+            padding-right: 1.6em;
+          }
         }
       }
     }
@@ -121,9 +146,8 @@ body {
       margin-bottom: 2em;
 
       section {
-        /* début de la section du profil et des compétences  */
+        /* début de la section du profil */
         &#profil {
-          /* début de la section profil */
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -158,6 +182,7 @@ body {
         }
         /* fin de la section profil */
       }
+      /*début de la section des compétences et contact*/
       #contact_comp {
         display: flex;
         flex-direction: column-reverse;
@@ -177,7 +202,6 @@ body {
           }
 
           &:last-of-type {
-            /*début de la section des compétences*/
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -230,38 +254,43 @@ body {
             }
           }
         } /* fin de la section du profil et des compétences */
-      }
-
-      /* fin de la section des compétence*/
+      } /* fin de la section des compétence et contact*/
     } /*fin de la div de la section profil et compétences*/
 
     /* début de la section téléchargement */
+    #barre {
+      border-top: 1px solid black;
+      width: 50%;
+      margin-left: 25%;
+      padding-bottom: 1em;
+    }
     #bouton {
       display: flex;
       flex-direction: row;
       justify-content: center;
       flex-wrap: wrap;
-      border-top: 1px solid black;
+      align-items: center;
+
       h3 {
         padding-right: 1em;
       }
       button {
         margin: 0.5em 0;
-        padding: 0 1em;
+        padding: 1em 1em;
         background-color: black;
-
+        color: white;
+        cursor: pointer;
         font-size: 1em;
         &:hover {
           background-color: white;
           border: 1px solid black;
-          p {
-            color: black;
-          }
+          color: black;
+          touch-action: initial;
         }
         p {
           margin: 0;
         }
       }
-    }
+    } /* fin de la section téléchargement */
   }
 }
